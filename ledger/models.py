@@ -11,6 +11,7 @@ class Profile(models.Model):
 
 class Ingredient(models.Model):
     name = models.CharField( max_length=50)
+    
     def __str__(self):
         return self.name
     def get_absolute_url(self):
@@ -27,6 +28,7 @@ class Recipe(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.name
     def get_absolute_url(self):
