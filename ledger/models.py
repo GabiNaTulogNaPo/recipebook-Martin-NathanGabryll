@@ -25,6 +25,6 @@ class RecipeIngredient(models.Model):
         )
     recipe = models.ForeignKey(
         Recipe, 
-        related_name="ingredient", 
+        related_name="ingredients", 
         on_delete=models.CASCADE
         )
