@@ -35,13 +35,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'ledger',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'ledger'
+    'django.contrib.staticfiles'
+    
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,5 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = '/recipes/list/' 
 
 LOGOUT_REDIRECT_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
