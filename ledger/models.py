@@ -5,8 +5,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField( max_length=50)
+    name = models.CharField(max_length=50)
     bio = models.TextField(blank=True)
+
 
 class Ingredient(models.Model):
     name = models.CharField( max_length=50)
@@ -14,6 +15,7 @@ class Ingredient(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse("ingredient_detail", args=[str(self.id)])
+
 
 class Recipe(models.Model):
     name = models.CharField( max_length=50)
@@ -28,6 +30,7 @@ class Recipe(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse("ledger:recipe_detail", args=[str(self.id)])
+
 
 class RecipeIngredient(models.Model):
     quantity = models.CharField(max_length=50)
