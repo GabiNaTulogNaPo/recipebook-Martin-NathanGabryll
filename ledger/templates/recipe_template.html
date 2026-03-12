@@ -4,11 +4,9 @@
 <h3>{{recipe.name}}</h3>
 <p>Author: {{recipe.author.name}}</p>
 <p>
-    {% if recipe.images %}
-        {% for image in recipe.images.all %}
-            <img src="{{ image.image.url }}" alt="{{ recipe.name }} images">
-        {% endfor %}
-    {% endif %}
+    {% for image in recipe.images.all %}
+        <img src="{{ image.image.url }}" alt="{{ image.description }}">
+    {% endfor %}
     <br>
     {% for ingredient in recipe.ingredients.all %}
     {{ingredient.ingredient.name}} - {{ingredient.quantity}}

@@ -32,8 +32,8 @@ def recipe_add_image(request, id):
     if request.method == "POST":
         form = RecipeImageForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('ledger:recipe_detail', id=id)
+            recipe_image = form.save()
+            return redirect('ledger:recipe_detail', id=recipe_image.recipe.id)
     context = {"form": form, "id":id}
     return render(request, "recipe_add_image.html", context)
 
