@@ -15,5 +15,6 @@
     <br>
     {% endfor %}
 </p>
+<a href="{% url 'ledger:recipe_add_image' id=recipe.id %}">Add an Image</a><br>
 <a href="{% url 'ledger:recipe_list' %}">Back to list</a>
 {% endblock content %}
